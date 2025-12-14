@@ -29,6 +29,7 @@ Thumbs.db
 # Data files
 *.json
 *.txt
+!requirements.txt
 
 # IDE specific files
 .vscode/
