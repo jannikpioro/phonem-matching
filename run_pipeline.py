@@ -63,7 +63,7 @@ def main():
     
     # Step 1: Run English categorizer
     success = run_command(
-        "python src/categoriser_en.py",
+        "python src/pos_categorising/categoriser_en.py",
         "English word categorization"
     )
     if not success:
@@ -72,7 +72,7 @@ def main():
     
     # Step 2: Run German categorizer
     success = run_command(
-        "python src/categoriser_de.py",
+        "python src/pos_categorising/categoriser_de.py",
         "German word categorization"
     )
     if not success:
@@ -83,7 +83,7 @@ def main():
     log("Updating phonem_matching.py to use 0.6 similarity threshold...")
     
     success = run_command(
-        "python src/phonem_matching.py",
+        "python src/phonem_matching/phonem_matching.py",
         "Phonetic matching (similarity >= 0.6)"
     )
     if not success:
