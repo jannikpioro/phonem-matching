@@ -1,67 +1,70 @@
-# Phonem-Matching
+# Phoneme Matching
 
-## Projektübersicht
-Dieses Repository enthält ein NLP-Projekt, das sich mit der phonetischen Ähnlichkeit und semantischen Gruppierung von Wörtern beschäftigt. Ziel ist es, deutsche und englische Wörter basierend auf ihrer phonetischen und semantischen Ähnlichkeit zu analysieren und zu paaren.
+## Project Overview
+This repository contains an NLP project focused on phonetic similarity and semantic grouping of words. The goal is to analyze and pair German and English words based on their phonetic and semantic similarity.
 
-## Ordnerstruktur
+## Important Note
+The `archive/` directory contains deprecated code and resources. It is not actively maintained and was created as a result of "vibe coding"—quick, experimental coding without a structured approach. Use the contents of this directory with caution, as they may not adhere to best practices or current project standards.
 
-### Hauptverzeichnis
-- **`run_pipeline.py`**: Hauptskript, um die gesamte Pipeline auszuführen.
-- **`start_pipeline.sh`**: Shell-Skript, um die Pipeline zu starten.
-- **`README.md`**: Diese Datei, die eine Übersicht über das Projekt bietet.
+## Folder Structure
+
+### Main Directory
+- **`run_pipeline.py`**: Main script to run the entire pipeline.
+- **`start_pipeline.sh`**: Shell script to start the pipeline.
+- **`README.md`**: This file, providing an overview of the project.
 
 ### `archive/`
-Enthält ältere oder experimentelle Skripte:
-- **`join_phrases.py`**: Skript zum Verbinden von Phrasen.
-- **`semantic_grouper.py`**: Gruppiert Wörter basierend auf semantischen Ähnlichkeiten.
-- **`sentence_builder.py`**: Erstellt Sätze aus den gruppierten Wörtern.
-- **`jannik_tries/`**: Experimentelle Dateien und JSON-Daten.
+Contains older or experimental scripts:
+- **`join_phrases.py`**: Script for joining phrases.
+- **`semantic_grouper.py`**: Groups words based on semantic similarities.
+- **`sentence_builder.py`**: Builds sentences from grouped words.
+- **`jannik_tries/`**: Experimental files and JSON data.
 
 ### `data/`
-Enthält die Daten, die für die Verarbeitung verwendet werden:
-- **`raw_analysis.ipynb`**: Jupyter Notebook für die Analyse.
-- **`grouped_de/`**: Enthält nach POS-Tags gruppierte deutsche Wörter.
-- **`grouped_en/`**: Enthält nach POS-Tags gruppierte englische Wörter.
-- **`pairing/`**: Enthält JSON-Dateien mit gepaarten Wörtern.
+Contains the data used for processing:
+- **`raw_analysis.ipynb`**: Jupyter notebook for analysis.
+- **`grouped_de/`**: German words grouped by POS tags.
+- **`grouped_en/`**: English words grouped by POS tags.
+- **`pairing/`**: JSON files with paired words.
 
 ### `logs/`
-- Enthält Logdateien, die während der Ausführung der Skripte generiert werden.
+- Contains log files generated during script execution.
 
 ### `src/`
-Enthält die Hauptskripte des Projekts:
-- **`join_phrases.py`**: Verbindet Phrasen basierend auf bestimmten Regeln.
-- **`phonem_matching/phonem_matching.py`**: Hauptskript für die phonetische Ähnlichkeitsberechnung.
-- **`pos_categorising/`**: Enthält Skripte zur Kategorisierung von Wörtern nach POS-Tags:
-  - `categoriser_de.py`: Für deutsche Wörter.
-  - `categoriser_en.py`: Für englische Wörter.
-- **`semantic_matching/`**: Enthält Skripte zur semantischen Paarung:
-  - `de/`: Für deutsche Wörter.
-  - `en/`: Für englische Wörter.
-- **`sentence_builder_llm.py`**: Erstellt Sätze mithilfe eines LLM (Large Language Model).
+Contains the main scripts of the project:
+- **`join_phrases.py`**: Joins phrases based on specific rules.
+- **`phonem_matching/phonem_matching.py`**: Main script for phonetic similarity calculation.
+- **`pos_categorising/`**: Scripts for categorizing words by POS tags:
+  - `categoriser_de.py`: For German words.
+  - `categoriser_en.py`: For English words.
+- **`semantic_matching/`**: Scripts for semantic pairing:
+  - `de/`: For German words.
+  - `en/`: For English words.
+- **`sentence_builder_llm.py`**: Builds sentences using a large language model (LLM).
 
-## Nutzung
-1. **Pipeline starten**:
+## Usage
+1. **Start the pipeline**:
    ```bash
    ./start_pipeline.sh
    ```
-2. **Phonetisches Matching ausführen**:
+2. **Run phonetic matching**:
    ```bash
    python src/phonem_matching/phonem_matching.py
    ```
-3. **POS-Kategorisierung**:
-   - Für Deutsch: `src/pos_categorising/categoriser_de.py`
-   - Für Englisch: `src/pos_categorising/categoriser_en.py`
+3. **POS categorization**:
+   - For German: `src/pos_categorising/categoriser_de.py`
+   - For English: `src/pos_categorising/categoriser_en.py`
 
-## Anforderungen
-- Python 3.8 oder höher
-- Abhängigkeiten:
+## Requirements
+- Python 3.8 or higher
+- Dependencies:
   - `tqdm`
   - `Levenshtein`
 
-Installiere die Abhängigkeiten mit:
+Install the dependencies with:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Lizenz
-Dieses Projekt steht unter der MIT-Lizenz.
+## License
+This project is licensed under the MIT License.
